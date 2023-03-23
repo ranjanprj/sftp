@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sftp-server-deployment
+  labels:
+    app: sftp-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sftp-server
+  template:
+    metadata:
+      labels:
+        app: sftp-server
+    spec:
+      volumes:
+        - name: sftp-data-vol
+          persistentVolumeClaim:
+            claimName: sftp-data-vol-claim
+        - name: sftp-users-config-volume
+          configMap:
+            name: sftp-users-config
+            items:
+              - key: users.conf
+                path: users.conf
+      containers:
+      - name: sftp-server
+        image: mysftp:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 2222
+        volumeMounts:
+          - name: sftp-users-config-volume
+            mountPath: /etc/sftp/users.conf
+            subPath: users.conf
+          - name: sftp-data-vol
+            mountPath: /home/
+
