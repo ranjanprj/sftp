@@ -15,5 +15,5 @@ RUN yum -y update && \
 ADD files/sshd_config /etc/ssh/sshd_config
 ADD files/create-sftp-user /usr/local/bin/
 
-EXPOSE 2222
+EXPOSE 22
 CMD /usr/sbin/sshd && sleep infinity
