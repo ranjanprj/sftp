@@ -14,6 +14,6 @@ RUN yum -y update && \
 
 COPY files/sshd_config.conf /etc/ssh/ssh_config.d/
 RUN echo "Port 2222" >> /etc/ssh/ssh_config
-
+RUN echo "Port 2222" >> /etc/ssh/ssh_config.d/05-redhat.conf
 EXPOSE 2222
 CMD /usr/sbin/sshd && sleep infinity
