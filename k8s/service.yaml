@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: sftp-server
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       port: 2222
