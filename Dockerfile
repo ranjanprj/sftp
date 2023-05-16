@@ -12,7 +12,7 @@ RUN yum -y update && \
     chown sshuser:sshgroup $home/.ssh/authorized_keys && \
     chmod 600 $home/.ssh/authorized_keys
 
-ADD files/sshd_config.conf /etc/ssh/ssh_config.d/
+COPY files/sshd_config.conf /etc/ssh/ssh_config.d/
 
 
 EXPOSE 2222
