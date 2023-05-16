@@ -12,8 +12,8 @@ RUN yum -y update && \
     chown sshuser:sshgroup $home/.ssh/authorized_keys && \
     chmod 600 $home/.ssh/authorized_keys
 
-ADD files/sshd_config /etc/ssh/sshd_config
-ADD files/create-sftp-user /usr/local/bin/
+#ADD files/sshd_config /etc/ssh/sshd_config
+
 
 EXPOSE 22
 CMD /usr/sbin/sshd && sleep infinity
