@@ -13,7 +13,7 @@ RUN yum -y update && \
     chmod 600 $home/.ssh/authorized_keys
 
 COPY files/sshd_config.conf /etc/ssh/ssh_config.d/
-
+RUN echo "Port 2222" >> /etc/ssh/ssh_config
 
 EXPOSE 2222
 CMD /usr/sbin/sshd && sleep infinity
