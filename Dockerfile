@@ -15,5 +15,5 @@ RUN yum -y update && \
 ADD files/sshd_config /etc/ssh/ssh_config.d/sshd_config
 
 
-EXPOSE 22
+EXPOSE 2222
 CMD /usr/sbin/sshd && sleep infinity
