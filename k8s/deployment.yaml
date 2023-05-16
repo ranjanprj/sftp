@@ -31,8 +31,8 @@ spec:
         ports:
           - containerPort: 2222
         securityContext:
-          privileged: true
-          allowPrivilegeEscalation: true
+          privileged: false
+          allowPrivilegeEscalation: false
         volumeMounts:
           - name: sftp-data-vol
             mountPath: /data-stor
