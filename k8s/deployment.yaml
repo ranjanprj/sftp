@@ -29,7 +29,7 @@ spec:
         image: mysftp:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 2222
+        - containerPort: 22
         volumeMounts:
           - name: sftp-users-config-volume
             mountPath: /etc/sftp/users.conf
