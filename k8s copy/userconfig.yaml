@@ -1,0 +1,10 @@
+#user config map
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sftp-users-config
+data:
+  users.conf: |
+    foo:123pass:1000:100:upload
+    bar:abcPass:1001:100:upload
+    baz:xyzPaSS:1002:100:upload
