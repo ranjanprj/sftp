@@ -15,9 +15,9 @@ ADD files/sshd_config /etc/ssh/sshd_config
 ADD files/create-sftp-user /usr/local/bin/
 
 
-ADD files/entrypoint.sh /
+ADD files/entrypoint /
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint
 
 EXPOSE 2222
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint"]
