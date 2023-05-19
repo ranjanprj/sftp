@@ -20,4 +20,7 @@ ADD files/entrypoint /
 RUN chmod +x /entrypoint
 
 EXPOSE 2222
+
+USER 12345
+
 ENTRYPOINT ["/entrypoint"]
